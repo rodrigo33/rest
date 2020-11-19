@@ -8,4 +8,15 @@ def consulta():
         print(pessoa['userId'], pessoa['Id'], pessoa['title'], pessoa['body'])
 
 
-consulta()
+def insere():
+    userId = 1
+    id = 101
+    title = 'Post de Rodrigo'
+    body = 'Inserindo um post Ipsum maravilis'
+    post = {'userId': userId, 'Id': id, 'title': title, 'body': body}
+    response = requests.post('https://jsonplaceholder.typicode.com/posts/', json=post)
+    print(response.status_code)
+    print(response.json())
+
+insere()
+#consulta()
